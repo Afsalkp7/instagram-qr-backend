@@ -2,16 +2,18 @@ const express = require('express')
 const app = express()
 const port = 3100;
 const axios = require('axios');
+const dotenv = require("dotenv")
+dotenv.config();
 
 app.get("/:userId",async(req,res)=>{
     const username = req.params.userId
     const options = {
         method: 'GET',
-        url: 'https://instagram130.p.rapidapi.com/account-info',
+        url: process.env.InstaUrl,
         params: {username: username},
         headers: {
-          'X-RapidAPI-Key': '8a34b61003msh89301ff5cc6221dp17fc38jsn018a4deb8ce8',
-          'X-RapidAPI-Host': 'instagram130.p.rapidapi.com'
+          'X-RapidAPI-Key': process.env.XRapidAPIKey,
+          'X-RapidAPI-Host': process.env.XRapidAPIHost
         }
       };
       

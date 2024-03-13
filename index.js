@@ -5,6 +5,12 @@ const axios = require('axios');
 const dotenv = require("dotenv")
 dotenv.config();
 
+app.get("/",(req,res)=>{
+    res.json({
+        message:"working"
+    })
+})
+
 app.get("/:userId",async(req,res)=>{
     const username = req.params.userId
     const options = {

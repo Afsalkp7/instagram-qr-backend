@@ -2,8 +2,12 @@ const express = require('express')
 const app = express()
 const port = 3100;
 const axios = require('axios');
+const cors = require("cors")
 const dotenv = require("dotenv")
 dotenv.config();
+
+
+app.use(cors());
 
 app.get("/",(req,res)=>{
     res.json({

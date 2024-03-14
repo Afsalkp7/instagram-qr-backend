@@ -23,7 +23,7 @@ app.get("/:userId",async(req,res)=>{
         params: {username: username},
         headers: {
           'X-RapidAPI-Key': process.env.XRapidAPIKey,
-          'X-RapidAPI-Host': process.env.XRapidAPIHost
+          'X-RapidAPI-Host': process.env.XRapidAPIHost  
         }
       };
       
